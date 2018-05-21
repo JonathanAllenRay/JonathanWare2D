@@ -58,7 +58,7 @@ public class SwipeManager : MonoBehaviour
             lastSwipeForce = forceBase - (Time.time - touchStart);
             lastSwipeForce = (lastSwipeForce < 0) ? 0 : lastSwipeForce;
             Vector2 deltaSwipe = touchPos - Input.mousePosition;
-            angleVector = Input.mousePosition - touchPos;
+            angleVector = Camera.main.ScreenToWorldPoint(Input.mousePosition) - Camera.main.ScreenToWorldPoint(touchPos);
             if (Mathf.Abs(deltaSwipe.x) > swipeThreshX)
             {
                 Direction |= (deltaSwipe.x < 0) ? SwipeDirection.Right : SwipeDirection.Left;
