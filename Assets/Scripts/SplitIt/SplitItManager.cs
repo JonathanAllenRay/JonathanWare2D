@@ -25,12 +25,12 @@ public class SplitItManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		if (SwipeManager.Instance.GetDir() == SwipeDirection.Left)
+		if (SwipeManager.Instance.SwipingInDir(SwipeDirection.Left))
         {
             leftLeg.SetTrigger("Move");
             leftUp = true;
         }
-        if (SwipeManager.Instance.GetDir() == SwipeDirection.Right)
+        if (SwipeManager.Instance.SwipingInDir(SwipeDirection.Right))
         {
             rightLeg.SetTrigger("Move");
             rightUp = true;

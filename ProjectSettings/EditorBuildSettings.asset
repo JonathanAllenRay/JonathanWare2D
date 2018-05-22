@@ -6,35 +6,32 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/Scene1Test.unity
-    guid: bcc942f396b397e4e844693843f82f70
-  - enabled: 0
-    path: Assets/Scenes/Scene2Test.unity
-    guid: 98cefddc4269a914581017ac3482ef7f
-  - enabled: 1
     path: Assets/Scenes/TapGames/SoccerJuggle.unity
     guid: bf3448091c8a51949879b2800cb5a8a7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TapGames/BalloonAnimals.unity
     guid: beb3db246bd318d4c9d4088d6b544c9d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TapGames/BeatIt.unity
     guid: 337683c69a6b2314cafddc08907562ce
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TapGames/FindIt.unity
     guid: b954f3555ac9e66459f24c9b9819c07c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TapGames/FlappyTurd.unity
     guid: 7967a381056b4914a95c98c9d7856e35
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TapGames/InvaderRunner.unity
     guid: 866bf63d33402374fa49b1ef945e7afc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TapGames/Shuffle.unity
     guid: 9e0bb61e16ee6f945ac780aaccff4f43
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TapGames/SniperTap.unity
     guid: 018e195ad4ec52741a5b78eb66c763ef
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TapGames/WesternDuel.unity
     guid: 106e788d65f65b14d8f1a41ba782b7b0
+  - enabled: 1
+    path: Assets/Scenes/SwipeGames/SplitIt.unity
+    guid: 29c34ba56adb49f46b1747da844adf7c

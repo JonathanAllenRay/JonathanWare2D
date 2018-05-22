@@ -29,8 +29,8 @@ public class SwipeManager : MonoBehaviour
 
     private Vector3 touchPos;
     private Vector2 angleVector;
-    private float swipeThreshX = 50.0f;
-    private float swipeThreshY = 100.0f;
+    private float swipeThreshX = 40.0f;
+    private float swipeThreshY = 80.0f;
 
     public float forceBase = 100.0f;
     private float lastSwipeForce;
@@ -73,6 +73,28 @@ public class SwipeManager : MonoBehaviour
     public SwipeDirection GetDir()
     {
         return Direction;
+    }
+
+    // If thisDir is diagonal, returns true if Direction == thisDir.
+    // If thisDir is not diagonal, returns true if Direction is a type of thisDir.
+    // E.g. Returns true if thisDir == Left and Direction == LeftUp, LeftDown, or Left.
+    public bool SwipingInDir(SwipeDirection thisDir)
+    {
+        if (thisDir == SwipeDirection.None)
+        {
+            return false;
+        }
+        if (thisDir == SwipeDirection.RightDown || thisDir == SwipeDirection.RightUp ||
+            thisDir == SwipeDirection.LeftUp|| thisDir == SwipeDirection.LeftDown)
+        {
+            return thisDir == Direction;
+        }
+        return (thisDir & Direction) > 0;
+    }
+
+    public bool SwipingInDirAbs(SwipeDirection thisDir)
+    {
+        return thisDir == Direction;
     }
 
     public Vector2 GetSwipeVector()
