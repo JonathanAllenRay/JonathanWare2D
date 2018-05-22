@@ -309,6 +309,10 @@
     <Compile Include="Assets\Scripts\FlappyTurd\PoopJump.cs" />
     <Compile Include="Assets\Scripts\GalacticShuffleboard\Earth.cs" />
     <Compile Include="Assets\Scripts\GalacticShuffleboard\GalacticeShuffleboardManager.cs" />
+    <Compile Include="Assets\Scripts\HammerTime\Hammer.cs" />
+    <Compile Include="Assets\Scripts\HammerTime\HammerAlien.cs" />
+    <Compile Include="Assets\Scripts\HammerTime\HammerTimeEarth.cs" />
+    <Compile Include="Assets\Scripts\HammerTime\HammerTimeManager.cs" />
     <Compile Include="Assets\Scripts\HeadMoomen\BadBoxer.cs" />
     <Compile Include="Assets\Scripts\HeadMoomen\BoxerHero.cs" />
     <Compile Include="Assets\Scripts\HeadMoomen\HeadMoomenManager.cs" />

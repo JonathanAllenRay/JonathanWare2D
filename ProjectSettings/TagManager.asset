@@ -11,6 +11,7 @@ TagManager:
   - EnergyBall
   - FloorTrigger
   - SuccessBox
+  - Hammer
   layers:
   - Default
   - TransparentFX
