@@ -881,7 +881,7 @@ MonoBehaviour:
   car3: {fileID: 1218050024302146, guid: be9a8d7e8b334224cb4973610468ffd6, type: 2}
   time: 6
   textTimer: {fileID: 1694903012}
-  timeScaleMod: 0
+  timeScaleMod: 2
 --- !u!1001 &1507345752
 Prefab:
   m_ObjectHideFlags: 0

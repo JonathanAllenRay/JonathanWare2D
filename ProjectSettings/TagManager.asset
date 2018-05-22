@@ -9,6 +9,8 @@ TagManager:
   - Plungers
   - Findable
   - EnergyBall
+  - FloorTrigger
+  - SuccessBox
   layers:
   - Default
   - TransparentFX
