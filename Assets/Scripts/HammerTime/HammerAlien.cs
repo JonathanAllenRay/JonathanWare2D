@@ -32,6 +32,7 @@ public class HammerAlien : MonoBehaviour {
         }
         else
         {
+            collision.transform.gameObject.GetComponent<HammerTimeEarth>().EarthDie();
             Instantiate(bang, collision.transform.gameObject.transform.position, collision.transform.gameObject.transform.rotation);
             Destroy(collision.transform.gameObject);
         }
