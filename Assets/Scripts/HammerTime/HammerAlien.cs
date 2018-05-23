@@ -25,12 +25,12 @@ public class HammerAlien : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.gameObject.tag == "Hammer")
+        if (collision.transform.gameObject.tag == "Hammer" && collision.transform.gameObject.GetComponent<Hammer>().IsMoving())
         {
             Instantiate(splatter, transform.position, transform.rotation);
             Destroy(gameObject);
         }
-        else
+        else if (collision.transform.gameObject.tag == "Earth")
         {
             collision.transform.gameObject.GetComponent<HammerTimeEarth>().EarthDie();
             Instantiate(bang, collision.transform.gameObject.transform.position, collision.transform.gameObject.transform.rotation);

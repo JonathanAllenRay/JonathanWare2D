@@ -39,12 +39,15 @@ public class Hammer : MonoBehaviour {
         if (Mathf.Abs(rb.angularVelocity) > 300.0f)
         {
             moving = true;
-            bc.isTrigger = true;
         }
         else
         {
             moving = false;
-            bc.isTrigger = false;
         }
+    }
+
+    public bool IsMoving()
+    {
+        return moving;
     }
 }
