@@ -296,6 +296,8 @@
     <Compile Include="Assets\Scripts\BoulderRun\Boulder.cs" />
     <Compile Include="Assets\Scripts\BoulderRun\BoulderRunManager.cs" />
     <Compile Include="Assets\Scripts\BoulderRun\RunningMan.cs" />
+    <Compile Include="Assets\Scripts\BoxEscape\BoxEscapeManager.cs" />
+    <Compile Include="Assets\Scripts\BoxEscape\EscapeBall.cs" />
     <Compile Include="Assets\Scripts\CarPassing\CarPassingManager.cs" />
     <Compile Include="Assets\Scripts\CarPassing\ObstacleCars.cs" />
     <Compile Include="Assets\Scripts\CarPassing\PlayerCar.cs" />

@@ -12,6 +12,7 @@ TagManager:
   - FloorTrigger
   - SuccessBox
   - Hammer
+  - Barrier
   layers:
   - Default
   - TransparentFX
