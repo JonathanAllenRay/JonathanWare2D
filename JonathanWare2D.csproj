@@ -287,6 +287,8 @@
   <ItemGroup>
     <Compile Include="Assets\Auto Letterbox\ForceCameraRatio.cs" />
     <Compile Include="Assets\Credits.cs" />
+    <Compile Include="Assets\Scripts\_NonMinigames\LevelSets\LevelSet1TapGames\Level1Manager.cs" />
+    <Compile Include="Assets\Scripts\_NonMinigames\UIMenu\UIButtons.cs" />
     <Compile Include="Assets\Scripts\BalloonAnimals\BalloonAnimal.cs" />
     <Compile Include="Assets\Scripts\BalloonAnimals\BalloonAnimalsManager.cs" />
     <Compile Include="Assets\Scripts\BalloonAnimals\ClickTapObject.cs" />
