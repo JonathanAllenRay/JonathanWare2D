@@ -311,9 +311,10 @@ MonoBehaviour:
   livesText: {fileID: 1068229474}
   gamesPlayedText: {fileID: 3001977}
   lives: 3
-  gamesToPlay: 9
+  gamesToPlay: 10
   minGameIndex: 0
-  maxGameIndex: 11
+  maxGameIndex: 10
+  bossIndex: 10
 --- !u!1 &647447168
 GameObject:
   m_ObjectHideFlags: 0

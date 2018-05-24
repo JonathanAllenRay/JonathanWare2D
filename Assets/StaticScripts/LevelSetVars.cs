@@ -13,6 +13,7 @@ public class LevelSetVars : MonoBehaviour {
     private static int gamesWon;
 
     private static bool endless;
+    private static bool bossFightWon = false;
 
     // If true, reset all vars to sets default on Load.
     // Used for if we need to load a new set or if
@@ -144,6 +145,18 @@ public class LevelSetVars : MonoBehaviour {
         }
     }
 
+    public static bool BossFightWon
+    {
+        get
+        {
+            return bossFightWon;
+        }
+        set
+        {
+            bossFightWon = value;
+        }
+    }
+
     public static void WonGame()
     {
         GamesWon++;
@@ -162,5 +175,11 @@ public class LevelSetVars : MonoBehaviour {
     public static void GainLife()
     {
         Lives++;
+    }
+
+    public static void BeatBoss()
+    {
+        bossFightWon = true;
+        WonGame();
     }
 }

@@ -45,7 +45,7 @@ public class WesternDuelManager : MonoBehaviour {
             textTimer.GetComponent<UnityEngine.UI.Text>().text = "Outta Time";
             if (!ended)
             {
-                Result();
+                StartCoroutine(Result());
             }
             ended = true;
         }
@@ -142,8 +142,17 @@ public class WesternDuelManager : MonoBehaviour {
         Instantiate(muzzleFlashEvil, muzzlePointEvil.transform.position, muzzlePointEvil.transform.rotation);
     }
 
-    private void Result()
+    IEnumerator Result()
     {
-        // nothing yet
+        if (success)
+        {
+            LevelSetVars.WonGame();
+        }
+        else
+        {
+            LevelSetVars.LostLife();
+        }
+        yield return new WaitForSeconds(1.0f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/LevelSets/Level1TapGames");
     }
 }

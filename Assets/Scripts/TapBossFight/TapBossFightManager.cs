@@ -26,7 +26,7 @@ public class TapBossFightManager : MonoBehaviour {
             textTimer.GetComponent<UnityEngine.UI.Text>().text = "Outta Time";
             if (!ended)
             {
-                Result();
+                StartCoroutine(Result());
             }
             ended = true;
         }
@@ -49,8 +49,17 @@ public class TapBossFightManager : MonoBehaviour {
         Debug.Log("Hero");
     }
 
-    private void Result()
+    IEnumerator Result()
     {
-
+        if (success)
+        {
+            LevelSetVars.BeatBoss();
+        }
+        else
+        {
+            LevelSetVars.LostLife();
+        }
+        yield return new WaitForSeconds(1.0f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/LevelSets/Level1TapGames");
     }
 }

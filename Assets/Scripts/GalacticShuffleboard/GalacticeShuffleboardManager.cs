@@ -39,7 +39,7 @@ public class GalacticeShuffleboardManager : MonoBehaviour {
             if (!ended)
             {
                 Debug.Log(success);
-                Result();
+                StartCoroutine(Result());
             }
             ended = true;
         }
@@ -55,8 +55,17 @@ public class GalacticeShuffleboardManager : MonoBehaviour {
         successPending = true;
     }
 
-    private void Result()
+    IEnumerator Result()
     {
-
+        if (success)
+        {
+            LevelSetVars.WonGame();
+        }
+        else
+        {
+            LevelSetVars.LostLife();
+        }
+        yield return new WaitForSeconds(1.0f);
+        //UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/LevelSets/Level1TapGames");
     }
 }

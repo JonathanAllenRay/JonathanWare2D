@@ -34,7 +34,7 @@ public class CarPassingManager : MonoBehaviour {
             if (!ended)
             {
                 Debug.Log(success);
-                Result();
+                StartCoroutine(Result());
             }
             ended = true;
         }
@@ -72,9 +72,18 @@ public class CarPassingManager : MonoBehaviour {
         }
     }
 
-    private void Result()
+    IEnumerator Result()
     {
-
+        if (success)
+        {
+            LevelSetVars.WonGame();
+        }
+        else
+        {
+            LevelSetVars.LostLife();
+        }
+        yield return new WaitForSeconds(1.0f);
+        //UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/LevelSets/Level1TapGames");
     }
 
     public void Crashed()

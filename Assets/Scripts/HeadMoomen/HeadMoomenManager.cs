@@ -27,7 +27,7 @@ public class HeadMoomenManager : MonoBehaviour {
             if (!ended)
             {
                 Debug.Log(success);
-                Result();
+                StartCoroutine(Result());
             }
             ended = true;
         }
@@ -38,9 +38,18 @@ public class HeadMoomenManager : MonoBehaviour {
         }
     }
 
-    private void Result()
+    IEnumerator Result()
     {
-
+        if (success)
+        {
+            LevelSetVars.WonGame();
+        }
+        else
+        {
+            LevelSetVars.LostLife();
+        }
+        yield return new WaitForSeconds(1.0f);
+        //UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/LevelSets/Level1TapGames");
     }
 
     public void Failed()
