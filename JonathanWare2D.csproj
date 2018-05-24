@@ -340,6 +340,7 @@
     <Compile Include="Assets\Scripts\WesternDuel\MuzzleFlash.cs" />
     <Compile Include="Assets\Scripts\WesternDuel\Stoplight.cs" />
     <Compile Include="Assets\Scripts\WesternDuel\WesternDuelManager.cs" />
+    <Compile Include="Assets\StaticScripts\LevelSetVars.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

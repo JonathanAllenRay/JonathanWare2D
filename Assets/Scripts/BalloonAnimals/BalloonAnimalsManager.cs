@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BalloonAnimalsManager : MonoBehaviour {
 
@@ -33,7 +34,7 @@ public class BalloonAnimalsManager : MonoBehaviour {
             textTimer.GetComponent<UnityEngine.UI.Text>().text = "Outta Time";
             if (!ended)
             {
-                Result();
+                StartCoroutine(Result());
             }
             ended = true;
         }
@@ -50,10 +51,13 @@ public class BalloonAnimalsManager : MonoBehaviour {
         catsSaved++;
     }
 
-    private void Result()
+    IEnumerator Result()
     {
+        Debug.Log("Getting result");
+        bool success = false;
         if (catsSaved == numToSpawn)
         {
+            success = true;
             Debug.Log("Winner");
             meow.Play();
         }
@@ -61,6 +65,16 @@ public class BalloonAnimalsManager : MonoBehaviour {
         {
             Debug.Log("Loser");
         }
+        if (success)
+        {
+            LevelSetVars.WonGame();
+        }
+        else
+        {
+            LevelSetVars.LostLife();
+        }
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene("Scenes/LevelSets/Level1TapGames");
     }
 
 }

@@ -50,7 +50,7 @@ public class BeatItManager : MonoBehaviour {
             textTimer.GetComponent<UnityEngine.UI.Text>().text = "Outta Time";
             if (!ended)
             {
-                Result();
+                StartCoroutine(Result());
             }
             ended = true;
         }
@@ -179,8 +179,17 @@ public class BeatItManager : MonoBehaviour {
         rightCheck.GetComponent<SpriteRenderer>().enabled = true;
     }
 
-    public void Result()
+    IEnumerator Result()
     {
-
+        if (success)
+        {
+            LevelSetVars.WonGame();
+        }
+        else
+        {
+            LevelSetVars.LostLife();
+        }
+        yield return new WaitForSeconds(1.0f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/LevelSets/Level1TapGames");
     }
 }
