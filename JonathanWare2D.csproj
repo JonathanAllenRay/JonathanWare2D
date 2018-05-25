@@ -323,6 +323,8 @@
     <Compile Include="Assets\Scripts\InputManagers\SwipeManager.cs" />
     <Compile Include="Assets\Scripts\InvaderRunner\Alien.cs" />
     <Compile Include="Assets\Scripts\InvaderRunner\InvaderRunnerManager.cs" />
+    <Compile Include="Assets\Scripts\NinjasVersusAliens\AlienUFO.cs" />
+    <Compile Include="Assets\Scripts\NinjasVersusAliens\PlayerNinja.cs" />
     <Compile Include="Assets\Scripts\Shuffle\Cup.cs" />
     <Compile Include="Assets\Scripts\Shuffle\ShuffleManager.cs" />
     <Compile Include="Assets\Scripts\SniperTap\SniperTapManager.cs" />

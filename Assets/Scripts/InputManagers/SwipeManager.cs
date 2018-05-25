@@ -28,6 +28,7 @@ public class SwipeManager : MonoBehaviour
     public SwipeDirection Direction { set; get;}
 
     private Vector3 touchPos;
+    private Vector3 releasePos;
     private Vector2 angleVector;
     private float swipeThreshX = 40.0f;
     private float swipeThreshY = 80.0f;
@@ -55,6 +56,7 @@ public class SwipeManager : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0))
         {
+            releasePos = Input.mousePosition;
             lastSwipeForce = forceBase - (Time.time - touchStart);
             lastSwipeForce = (lastSwipeForce < 0) ? 0 : lastSwipeForce;
             Vector2 deltaSwipe = touchPos - Input.mousePosition;
@@ -80,12 +82,8 @@ public class SwipeManager : MonoBehaviour
     // E.g. Returns true if thisDir == Left and Direction == LeftUp, LeftDown, or Left.
     public bool SwipingInDir(SwipeDirection thisDir)
     {
-        if (thisDir == SwipeDirection.None)
-        {
-            return false;
-        }
         if (thisDir == SwipeDirection.RightDown || thisDir == SwipeDirection.RightUp ||
-            thisDir == SwipeDirection.LeftUp|| thisDir == SwipeDirection.LeftDown)
+            thisDir == SwipeDirection.LeftUp|| thisDir == SwipeDirection.LeftDown || thisDir == SwipeDirection.None)
         {
             return thisDir == Direction;
         }
@@ -105,5 +103,16 @@ public class SwipeManager : MonoBehaviour
     public float GetForce()
     {
         return lastSwipeForce;
+    }
+
+    // Returns the most recent downward touch of a swipe
+    public Vector3 GetDownTouchPosition()
+    {
+        return touchPos;
+    }
+
+    public Vector3 GetUpTouchPosition()
+    {
+        return releasePos;
     }
 }
