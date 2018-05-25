@@ -15,12 +15,6 @@ public class PlayerNinja : MonoBehaviour
 
     private bool thrown = false;
 
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
 	// Update is called once per frame
 	void Update () {
         if (!SwipeManager.Instance.SwipingInDir(SwipeDirection.Left) && SwipeManager.Instance.GetDir() != SwipeDirection.None && !thrown)

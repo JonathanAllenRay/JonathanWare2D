@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AlienUFO : MonoBehaviour {
 
+    public NinjasVersusAliensManager nvam;
+
     public GameObject explosion;
     public GameObject altSpawn;
     public float speed;
@@ -35,5 +37,6 @@ public class AlienUFO : MonoBehaviour {
     {
         Instantiate(explosion, transform.position, transform.rotation);
         Destroy(gameObject);
+        nvam.UFODown();
     }
 }
