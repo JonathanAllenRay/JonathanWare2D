@@ -105,6 +105,11 @@ public class SwipeManager : MonoBehaviour
         return lastSwipeForce;
     }
 
+    public Vector2 GetSwipeVectorForce()
+    {
+        return angleVector*GetForce();
+    }
+
     // Returns the most recent downward touch of a swipe
     public Vector3 GetDownTouchPosition()
     {
