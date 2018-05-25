@@ -295,7 +295,9 @@
     <Compile Include="Assets\Scripts\BalloonAnimals\PoppedBalloon.cs" />
     <Compile Include="Assets\Scripts\BeatIt\BeatItManager.cs" />
     <Compile Include="Assets\Scripts\BeatIt\Drum.cs" />
+    <Compile Include="Assets\Scripts\BossFightSwipe\BossFightSwipeManager.cs" />
     <Compile Include="Assets\Scripts\BossFightSwipe\BossMonsterSwipe.cs" />
+    <Compile Include="Assets\Scripts\BossFightSwipe\InputArrow.cs" />
     <Compile Include="Assets\Scripts\BoulderRun\Boulder.cs" />
     <Compile Include="Assets\Scripts\BoulderRun\BoulderRunManager.cs" />
     <Compile Include="Assets\Scripts\BoulderRun\RunningMan.cs" />
