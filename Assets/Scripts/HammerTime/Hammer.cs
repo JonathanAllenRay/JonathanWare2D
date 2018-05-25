@@ -22,11 +22,11 @@ public class Hammer : MonoBehaviour {
         {
             rb.bodyType = RigidbodyType2D.Dynamic;
         }
-        if (SwipeManager.Instance.GetDir() == SwipeDirection.Left)
+        if (SwipeManager.Instance.SwipingInDir(SwipeDirection.Left))
         {
             rb.AddForce(-transform.right * forceBonus);
         }
-        else if (SwipeManager.Instance.GetDir() == SwipeDirection.Right)
+        else if (SwipeManager.Instance.SwipingInDir(SwipeDirection.Right))
         {
             rb.AddForce(transform.right * forceBonus);
         }

@@ -28,13 +28,13 @@ public class PlayerCar : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         bool changedSpeed = false;
-        if (SwipeManager.Instance.GetDir() == SwipeDirection.Left)
+        if (SwipeManager.Instance.SwipingInDir(SwipeDirection.Left))
         {
             dest = leftLane;
             speed += changeBonus;
             changedSpeed = true;
         }
-        else if (SwipeManager.Instance.GetDir() == SwipeDirection.Right)
+        else if (SwipeManager.Instance.SwipingInDir(SwipeDirection.Right))
         {
             dest = rightLane;
             speed += changeBonus;
