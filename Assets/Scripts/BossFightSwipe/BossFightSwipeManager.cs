@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossFightSwipeManager : MonoBehaviour {
 
-    public GameObject catFighter;
+    public CatFighter catFighter;
 
     public GameObject inputArrow;
 
@@ -113,19 +113,23 @@ public class BossFightSwipeManager : MonoBehaviour {
                 inputList[inputIndex].SetActive(false);
                 if (inputIndex >= inputList.Count-1)
                 {
-                    ClearInputs();
                     throws++;
+                    ClearInputs();
                     if (throws == 3)
                     {
                         // Trigger ultimate
+                        catFighter.StartUltimateFireball();
+
                     }
                     else if (throws < 2)
                     {
+                        catFighter.StartFireball();
                         SetupFireball();
                         // Normal
                     }
                     else
                     {
+                        catFighter.StartFireball();
                         SetupFireballSuper();
                     }
                 }
