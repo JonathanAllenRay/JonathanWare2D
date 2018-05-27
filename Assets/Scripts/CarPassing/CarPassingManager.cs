@@ -34,7 +34,7 @@ public class CarPassingManager : MonoBehaviour {
             if (!ended)
             {
                 Debug.Log(success);
-                StartCoroutine(Result());
+                StartCoroutine(SetManager.Result(success, 1.0f, false));
             }
             ended = true;
         }
@@ -70,20 +70,6 @@ public class CarPassingManager : MonoBehaviour {
         {
             Instantiate(theCar, spawnRight.transform.position, spawnRight.transform.rotation);
         }
-    }
-
-    IEnumerator Result()
-    {
-        if (success)
-        {
-            LevelSetVars.WonGame();
-        }
-        else
-        {
-            LevelSetVars.LostLife();
-        }
-        yield return new WaitForSeconds(1.0f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(LevelSetVars.SetScenePath);
     }
 
     public void Crashed()
