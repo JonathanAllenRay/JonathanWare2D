@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FindItManager : MonoBehaviour {
+public class FindItManager : MinigameManager {
 
     private GameObject[] findables;
 
@@ -15,11 +15,6 @@ public class FindItManager : MonoBehaviour {
     private bool started = false;
 
     private bool success = false;
-
-    public float time;
-    private bool ended = false;
-    public GameObject textTimer;
-    public float timeScaleMod;
 
 
     // Use this for initialization
@@ -41,21 +36,7 @@ public class FindItManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        time -= Time.deltaTime;
-        if (time <= 0)
-        {
-            textTimer.GetComponent<UnityEngine.UI.Text>().text = "Outta Time";
-            if (!ended)
-            {
-                StartCoroutine(SetManager.Result(success, 1.0f, false));
-            }
-            ended = true;
-        }
-        else
-        {
-            int roundedSeconds = (int)time;
-            textTimer.GetComponent<UnityEngine.UI.Text>().text = "Time Left: " + roundedSeconds;
-        }
+        GameTimeUpdate(success);
     }
 
     void ShuffleFindables()

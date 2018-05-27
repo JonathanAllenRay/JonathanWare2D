@@ -209,10 +209,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9086192a93fba5c4d9173f1ae4e30c53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 0
+  delay: 0
+  boss: 1
+  textTimer: {fileID: 0}
+  timeScaleMod: 0
   catFighter: {fileID: 1118422960}
   inputArrow: {fileID: 1437217874332010, guid: 2e9bdd94e2436fb4ba3309e107e15da0, type: 2}
   inputStartPoint: {fileID: 614195629}
-  timeScaleMod: 0
 --- !u!4 &1088110293
 Transform:
   m_ObjectHideFlags: 0

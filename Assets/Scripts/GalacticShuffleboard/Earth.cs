@@ -22,8 +22,7 @@ public class Earth : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        onTarget = true;
-        gsm.SetSuccess(onTarget);
+        gsm.SetSuccess();
     }
 }
 

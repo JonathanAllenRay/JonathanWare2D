@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class AlienStompManager : MinigameManager {
 
-    public float time;
-    private bool ended = false;
-    public GameObject textTimer;
-    public float timeScaleMod;
-
     private bool success = false;
 
     // Use this for initialization

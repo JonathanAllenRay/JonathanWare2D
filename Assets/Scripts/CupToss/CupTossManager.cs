@@ -2,16 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CupTossManager : MonoBehaviour {
+public class CupTossManager : MinigameManager {
 
     private bool success = false;
 
     public GameObject can;
 
-    public float time;
-    private bool ended = false;
-    public GameObject textTimer;
-    public float timeScaleMod;
     // Use this for initialization
     void Start () {
         Time.timeScale += timeScaleMod;
@@ -21,22 +17,7 @@ public class CupTossManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        time -= Time.deltaTime;
-        if (time <= 0)
-        {
-            textTimer.GetComponent<UnityEngine.UI.Text>().text = "Outta Time";
-            if (!ended)
-            {
-                Debug.Log(success);
-                StartCoroutine(Result());
-            }
-            ended = true;
-        }
-        else
-        {
-            int roundedSeconds = (int)time;
-            textTimer.GetComponent<UnityEngine.UI.Text>().text = "Time Left: " + roundedSeconds;
-        }
+        GameTimeUpdate(success);
     }
 
     IEnumerator Result()
@@ -58,6 +39,4 @@ public class CupTossManager : MonoBehaviour {
         success = true;
         Debug.Log("In the can");
     }
-
-
 }

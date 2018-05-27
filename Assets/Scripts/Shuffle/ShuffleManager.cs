@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShuffleManager : MonoBehaviour {
+public class ShuffleManager : MinigameManager {
 
     public Rigidbody2D mainCup;
     public Rigidbody2D sideCup1;
@@ -10,11 +10,6 @@ public class ShuffleManager : MonoBehaviour {
 
     private bool canPick = false;
     private bool success = false;
-
-    public float time;
-    private bool ended = false;
-    public GameObject textTimer;
-    public float timeScaleMod;
 
     public float force;
 
@@ -25,21 +20,7 @@ public class ShuffleManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        time -= Time.deltaTime;
-        if (time <= 0)
-        {
-            textTimer.GetComponent<UnityEngine.UI.Text>().text = "Outta Time";
-            if (!ended)
-            {
-                StartCoroutine(Result());
-            }
-            ended = true;
-        }
-        else
-        {
-            int roundedSeconds = (int)time;
-            textTimer.GetComponent<UnityEngine.UI.Text>().text = "Time Left: " + roundedSeconds;
-        }
+        GameTimeUpdate(success);
     }
 
     void Shuffle()

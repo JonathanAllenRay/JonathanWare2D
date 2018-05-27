@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WesternDuelManager : MonoBehaviour {
+public class WesternDuelManager : MinigameManager {
 
     private bool canShoot = false;
     private bool success = false;
@@ -24,36 +24,14 @@ public class WesternDuelManager : MonoBehaviour {
 
     private float timeToShoot = 0.4f;
 
-    public GameObject textTimer;
-    public float time;
-    private bool ended = false;
-
-    public float timeScaleMod;
-
     private void Start()
     {
         Time.timeScale += timeScaleMod;
     }
 
-
-
     private void Update()
     {
-        time -= Time.deltaTime;
-        if (time <= 0)
-        {
-            textTimer.GetComponent<UnityEngine.UI.Text>().text = "Outta Time";
-            if (!ended)
-            {
-                StartCoroutine(SetManager.Result(success, 1.0f, false));
-            }
-            ended = true;
-        }
-        else
-        {
-            int roundedSeconds = (int)time;
-            textTimer.GetComponent<UnityEngine.UI.Text>().text = "Time Left: " + roundedSeconds;
-        }
+        GameTimeUpdate(success);
         if (Input.GetMouseButtonDown(0))
         {
             if (!IsDead() && CanShoot() && !HasSuccess())

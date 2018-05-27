@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeatItManager : MonoBehaviour {
+public class BeatItManager : MinigameManager {
 
     public AudioSource snare;
 
@@ -29,12 +29,6 @@ public class BeatItManager : MonoBehaviour {
     public GameObject snareDrum;
     private Drum sd;
 
-
-    public float time;
-    private bool ended = false;
-    public GameObject textTimer;
-    public float timeScaleMod;
-
     // Use this for initialization
     void Start () {
         Time.timeScale += timeScaleMod;
@@ -44,21 +38,7 @@ public class BeatItManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        time -= Time.deltaTime;
-        if (time <= 0)
-        {
-            textTimer.GetComponent<UnityEngine.UI.Text>().text = "Outta Time";
-            if (!ended)
-            {
-                StartCoroutine(SetManager.Result(success, 1.0f, false));
-            }
-            ended = true;
-        }
-        else
-        {
-            int roundedSeconds = (int)time;
-            textTimer.GetComponent<UnityEngine.UI.Text>().text = "Time Left: " + roundedSeconds;
-        }
+        GameTimeUpdate(success);
     }
 
     void PlayInitialBeat()

@@ -2,14 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NinjasVersusAliensManager : MonoBehaviour {
+public class NinjasVersusAliensManager : MinigameManager {
 
     private bool success = false;
-
-    public float time;
-    private bool ended = false;
-    public GameObject textTimer;
-    public float timeScaleMod;
     // Use this for initialization
     void Start()
     {
@@ -18,22 +13,7 @@ public class NinjasVersusAliensManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        time -= Time.deltaTime;
-        if (time <= 0)
-        {
-            textTimer.GetComponent<UnityEngine.UI.Text>().text = "Outta Time";
-            if (!ended)
-            {
-                Debug.Log(success);
-                StartCoroutine(Result());
-            }
-            ended = true;
-        }
-        else
-        {
-            int roundedSeconds = (int)time;
-            textTimer.GetComponent<UnityEngine.UI.Text>().text = "Time Left: " + roundedSeconds;
-        }
+        GameTimeUpdate(success);
 
     }
 

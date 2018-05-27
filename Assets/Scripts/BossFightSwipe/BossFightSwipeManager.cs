@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossFightSwipeManager : MonoBehaviour {
+public class BossFightSwipeManager : MinigameManager {
 
     public CatFighter catFighter;
 
@@ -14,8 +14,6 @@ public class BossFightSwipeManager : MonoBehaviour {
 
     private int inputIndex = 0;
     private int throws = 0;
-
-    public float timeScaleMod;
 
     private bool success = false;
 

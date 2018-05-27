@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SplitItManager : MonoBehaviour {
+public class SplitItManager : MinigameManager {
     public Animator leftLeg;
     public Animator rightLeg;
     public Rigidbody2D mainBody;
@@ -10,17 +10,10 @@ public class SplitItManager : MonoBehaviour {
     private bool leftUp = false;
     private bool rightUp = false;
 
-
-    public float time;
-    private bool ended = false;
-    public GameObject textTimer;
-    public float timeScaleMod;
-
     private bool success = false;
     // Use this for initialization
     void Start () {
         Time.timeScale += timeScaleMod;
-    
     }
 
     // Update is called once per frame
@@ -40,22 +33,7 @@ public class SplitItManager : MonoBehaviour {
             mainBody.bodyType = RigidbodyType2D.Dynamic;
             success = true;
         }
-        time -= Time.deltaTime;
-        if (time <= 0)
-        {
-            textTimer.GetComponent<UnityEngine.UI.Text>().text = "Outta Time";
-            if (!ended)
-            {
-                Debug.Log(success);
-                StartCoroutine(Result());
-            }
-            ended = true;
-        }
-        else
-        {
-            int roundedSeconds = (int)time;
-            textTimer.GetComponent<UnityEngine.UI.Text>().text = "Time Left: " + roundedSeconds;
-        }
+        GameTimeUpdate(success);
     }
 
     IEnumerator Result()

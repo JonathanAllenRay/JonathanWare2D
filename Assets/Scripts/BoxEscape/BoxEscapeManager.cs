@@ -2,17 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoxEscapeManager : MonoBehaviour {
+public class BoxEscapeManager : MinigameManager {
 
     private GameObject[] exitBarriers;
 
     public GameObject ballGameObject;
     private EscapeBall ball;
-
-    public float time;
-    private bool ended = false;
-    public GameObject textTimer;
-    public float timeScaleMod;
 
     private bool success = false;
 
@@ -30,26 +25,12 @@ public class BoxEscapeManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Physics2D.gravity = 30.0f * Input.acceleration.normalized;
-        time -= Time.deltaTime;
-        if (time <= 0)
-        {
-            textTimer.GetComponent<UnityEngine.UI.Text>().text = "Outta Time";
-            if (ball.HasEscaped())
-            {
-                success = true;
-            }
-            if (!ended)
-            {
-                Debug.Log(success);
-                StartCoroutine(Result());
-            }
-            ended = true;
-        }
-        else
-        {
-            int roundedSeconds = (int)time;
-            textTimer.GetComponent<UnityEngine.UI.Text>().text = "Time Left: " + roundedSeconds;
-        }
+        GameTimeUpdate(success);
+    }
+
+    public void Escaped()
+    {
+        success = true;
     }
 
     IEnumerator Result()

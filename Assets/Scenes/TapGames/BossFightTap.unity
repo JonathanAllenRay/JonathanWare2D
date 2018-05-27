@@ -511,11 +511,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d0e8537496ead4089c7253289cd486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  success: 0
-  monster: {fileID: 1333043546}
   time: 20
+  delay: 0
+  boss: 1
   textTimer: {fileID: 465466139}
   timeScaleMod: 0
+  success: 0
+  monster: {fileID: 1333043546}
 --- !u!4 &1202221773
 Transform:
   m_ObjectHideFlags: 0

@@ -763,10 +763,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c971a5116dfe5a745b9ba5673f18d11d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballGameObject: {fileID: 1534592963}
   time: 6
+  delay: 0
+  boss: 0
   textTimer: {fileID: 737587244}
   timeScaleMod: 0
+  ballGameObject: {fileID: 1534592963}
 --- !u!4 &902644781
 Transform:
   m_ObjectHideFlags: 0
@@ -1272,6 +1274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc3ef8f90b4eaa48b1b9ed59e504f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bem: {fileID: 902644780}
 --- !u!1 &1829343359
 GameObject:
   m_ObjectHideFlags: 0

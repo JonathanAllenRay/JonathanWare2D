@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InvaderRunnerManager : MonoBehaviour {
+public class InvaderRunnerManager : MinigameManager {
 
     public GameObject[] stairs;
 
@@ -10,11 +10,6 @@ public class InvaderRunnerManager : MonoBehaviour {
 
 
     private bool success = false;
-
-    public float time;
-    private bool ended = false;
-    public GameObject textTimer;
-    public float timeScaleMod;
 
     // Use this for initialization
     void Start () {
@@ -30,21 +25,7 @@ public class InvaderRunnerManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        time -= Time.deltaTime;
-        if (time <= 0)
-        {
-            textTimer.GetComponent<UnityEngine.UI.Text>().text = "Outta Time";
-            if (!ended)
-            {
-                StartCoroutine(SetManager.Result(success, 1.0f, false));
-            }
-            ended = true;
-        }
-        else
-        {
-            int roundedSeconds = (int)time;
-            textTimer.GetComponent<UnityEngine.UI.Text>().text = "Time Left: " + roundedSeconds;
-        }
+        GameTimeUpdate(success);
     }
 
     public void EarthDestroyed()

@@ -3,18 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class BalloonAnimalsManager : MonoBehaviour {
+public class BalloonAnimalsManager : MinigameManager {
 
     public int numToSpawn;
     public GameObject balloonAnimals;
     private int catsSaved;
 
-    public AudioSource meow;
+    private bool success = false;
 
-    public float time;
-    private bool ended = false;
-    public GameObject textTimer;
-    public float timeScaleMod;
+    public AudioSource meow;
 
 	// Use this for initialization
 	void Start () {
@@ -28,35 +25,18 @@ public class BalloonAnimalsManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        time -= Time.deltaTime;
-        if (time <= 0)
-        {
-            textTimer.GetComponent<UnityEngine.UI.Text>().text = "Outta Time";
-            if (!ended)
-            {
-                Debug.Log("Getting result");
-                bool success = false;
-                if (catsSaved == numToSpawn)
-                {
-                    success = true;
-                    Debug.Log("Winner");
-                    meow.Play();
-                }
-                StartCoroutine(SetManager.Result(success, 1.0f, false));
-            }
-            ended = true;
-        }
-        else
-        {
-            int roundedSeconds = (int)time;
-            textTimer.GetComponent<UnityEngine.UI.Text>().text = "Time Left: " + roundedSeconds;
-        }
+        GameTimeUpdate(success);
 
     }
 
     public void SavedCat()
     {
         catsSaved++;
+        meow.Play();
+        if (numToSpawn == catsSaved)
+        {
+            success = true;
+        }
     }
 
 }
