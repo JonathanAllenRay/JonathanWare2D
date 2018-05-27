@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BoulderRunManager : MonoBehaviour {
 
@@ -47,7 +48,7 @@ public class BoulderRunManager : MonoBehaviour {
             LevelSetVars.LostLife();
         }
         yield return new WaitForSeconds(1.0f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/LevelSets/Level1TapGames");
+        SceneManager.LoadScene(LevelSetVars.SetScenePath);
     }
 
     public void MadeIt()

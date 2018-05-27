@@ -15,6 +15,7 @@ public class Level1Manager : MonoBehaviour {
     public int bossIndex = 10;
     private int currentGameIndex;
     private int gamesPlayed;
+    private string setScenePath = "Scenes/LevelSets/Level1TapGames";
 
     private bool endless = false;
 
@@ -22,7 +23,7 @@ public class Level1Manager : MonoBehaviour {
     void Start () {
         if (LevelSetVars.ResetOnNextSetLoad)
         {
-            SetupSet();
+            LevelSetVars.SetupSet(minGameIndex, maxGameIndex, lives, gamesToPlay, endless, setScenePath);
         }
         SetupText(); 
 
@@ -94,25 +95,6 @@ public class Level1Manager : MonoBehaviour {
         SceneManager.LoadScene(sceneIndex);
     }
 
-    private void SetupSet()
-    {
-        LevelSetVars.UnusedGameIndices = new List<int>();
-        Debug.Log("Init num: " + LevelSetVars.UnusedGameIndices.Count);
-        Debug.Log("Mindex" + minGameIndex);
-        Debug.Log("Maxdex" + maxGameIndex);
-        for (int i = minGameIndex; i < maxGameIndex; i++)
-        {
-            LevelSetVars.UnusedGameIndices.Add(i);
-        }
-        Debug.Log("Init num: " + LevelSetVars.UnusedGameIndices.Count);
-        LevelSetVars.ResetOnNextSetLoad = false;
-        LevelSetVars.Lives = lives;
-        LevelSetVars.GamesPlayed = 0;
-        LevelSetVars.GamesToPlay = gamesToPlay;
-        LevelSetVars.GamesWon = 0;
-        LevelSetVars.Endless = endless;
-        LevelSetVars.BossFightWon = false;
-    }
     
     public void LostSet()
     {

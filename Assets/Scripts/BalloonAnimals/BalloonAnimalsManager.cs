@@ -74,7 +74,7 @@ public class BalloonAnimalsManager : MonoBehaviour {
             LevelSetVars.LostLife();
         }
         yield return new WaitForSeconds(1.0f);
-        SceneManager.LoadScene("Scenes/LevelSets/Level1TapGames");
+        SceneManager.LoadScene(LevelSetVars.SetScenePath);
     }
 
 }

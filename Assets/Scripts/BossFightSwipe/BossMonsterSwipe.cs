@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class BossMonsterSwipe : MonoBehaviour {
 
+    public BossFightSwipeManager bfsm;
+
+    public GameObject explosion;
+
     public float speed;
     public GameObject flash;
-    private int health = 3;
+    private int health = 4;
 
     public GameObject deathEffect;
     //public SwipeBossFightManager sbfm;
@@ -24,15 +28,24 @@ public class BossMonsterSwipe : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.transform.gameObject.GetComponent<FireballScript>().Fizzle();
-        Debug.Log("Hit");
-        health--;
-        flash.SetActive(true);
-        Invoke("UndoFlash", .1f);
-        if (health <= 0)
+        if (collision.transform.gameObject.tag == "Player")
         {
-            MonsterDie();
+            collision.transform.gameObject.GetComponent<CatFighter>().CatDead();
+            bfsm.EndGame();
         }
+        else
+        {
+            collision.transform.gameObject.GetComponent<FireballScript>().Fizzle();
+            Debug.Log("Hit");
+            health--;
+            flash.SetActive(true);
+            Invoke("UndoFlash", .1f);
+            if (health <= 0)
+            {
+                MonsterDie();
+            }
+        }
+
     }
 
     void UndoFlash()
@@ -42,6 +55,8 @@ public class BossMonsterSwipe : MonoBehaviour {
 
     void MonsterDie()
     {
+        Instantiate(explosion, transform.position, transform.rotation);
         Destroy(gameObject);
+        bfsm.BossDestroyed();
     }
 }

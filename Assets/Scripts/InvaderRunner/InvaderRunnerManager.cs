@@ -63,6 +63,6 @@ public class InvaderRunnerManager : MonoBehaviour {
             LevelSetVars.LostLife();
         }
         yield return new WaitForSeconds(1.0f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/LevelSets/Level1TapGames");
+        UnityEngine.SceneManagement.SceneManager.LoadScene(LevelSetVars.SetScenePath);
     }
 }

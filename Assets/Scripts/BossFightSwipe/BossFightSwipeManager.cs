@@ -31,6 +31,17 @@ public class BossFightSwipeManager : MonoBehaviour {
         CheckComboInput();
 	}
 
+    public void EndGame()
+    {
+        StartCoroutine(Result());
+    }
+
+    public void BossDestroyed()
+    {
+        success = true;
+        EndGame();
+    }
+
     void SetupFireball()
     {
         inputList.Clear();
@@ -80,7 +91,14 @@ public class BossFightSwipeManager : MonoBehaviour {
     void MissedInput()
     {
         ClearInputs();
-        SetupFireball();
+        if (throws == 3)
+        {
+            SetupFireballSuper();
+        }
+        else
+        {
+            SetupFireball();
+        }
         inputIndex = 0;
     }
 
@@ -121,13 +139,13 @@ public class BossFightSwipeManager : MonoBehaviour {
                 {
                     throws++;
                     ClearInputs();
-                    if (throws == 3)
+                    if (throws == 4)
                     {
                         // Trigger ultimate
                         catFighter.StartUltimateFireball();
 
                     }
-                    else if (throws < 2)
+                    else if (throws < 3)
                     {
                         catFighter.StartFireball();
                         SetupFireball();
@@ -144,6 +162,10 @@ public class BossFightSwipeManager : MonoBehaviour {
                     inputIndex++;
                 }
             }
+            else
+            {
+                MissedInput();
+            }
         }
     }
 
@@ -158,6 +180,6 @@ public class BossFightSwipeManager : MonoBehaviour {
             LevelSetVars.LostLife();
         }
         yield return new WaitForSeconds(1.0f);
-        //UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/LevelSets/Level1TapGames");
+        //SceneManager.LoadScene(LevelSetVars.SetScenePath);
     }
 }

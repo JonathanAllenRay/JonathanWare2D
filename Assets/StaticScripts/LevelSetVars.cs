@@ -11,6 +11,7 @@ public class LevelSetVars : MonoBehaviour {
     private static int gamesPlayed;
     private static int gamesToPlay;
     private static int gamesWon;
+    private static string setScenePath;
 
     private static bool endless;
     private static bool bossFightWon = false;
@@ -25,6 +26,19 @@ public class LevelSetVars : MonoBehaviour {
     private static bool resetOnNextSetLoad = true;
 
     private static List<int> unusedGameIndices;
+
+
+    public static string SetScenePath
+    {
+        get
+        {
+            return setScenePath;
+        }
+        set
+        {
+            setScenePath = value;
+        }
+    }
 
     public static List<int> UnusedGameIndices
     {
@@ -181,5 +195,23 @@ public class LevelSetVars : MonoBehaviour {
     {
         bossFightWon = true;
         WonGame();
+    }
+
+
+    public static void SetupSet(int minGameIndex, int maxGameIndex, int lives, int gamesToPlay, bool endless, string setScenePath)
+    {
+        UnusedGameIndices = new List<int>();
+        for (int i = minGameIndex; i < maxGameIndex; i++)
+        {
+            UnusedGameIndices.Add(i);
+        }
+        ResetOnNextSetLoad = false;
+        Lives = lives;
+        GamesPlayed = 0;
+        GamesToPlay = gamesToPlay;
+        GamesWon = 0;
+        Endless = endless;
+        BossFightWon = false;
+        SetScenePath = setScenePath;
     }
 }

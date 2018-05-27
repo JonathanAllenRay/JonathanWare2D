@@ -8,6 +8,8 @@ public class CatFighter : MonoBehaviour {
 
     public Animator ani;
 
+    public GameObject explosion;
+
     public GameObject fireball;
     public GameObject ultFireball;
 
@@ -41,5 +43,11 @@ public class CatFighter : MonoBehaviour {
     public void ShootUltimateFireball()
     {
         Instantiate(ultFireball, firePoint.transform.position, firePoint.transform.rotation);
+    }
+
+    public void CatDead()
+    {
+        Instantiate(explosion, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 }
