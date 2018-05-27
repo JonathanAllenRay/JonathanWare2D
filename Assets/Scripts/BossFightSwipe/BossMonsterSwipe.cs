@@ -24,17 +24,24 @@ public class BossMonsterSwipe : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        collision.transform.gameObject.GetComponent<FireballScript>().Fizzle();
+        Debug.Log("Hit");
         health--;
         flash.SetActive(true);
         Invoke("UndoFlash", .1f);
         if (health <= 0)
         {
-
+            MonsterDie();
         }
     }
 
     void UndoFlash()
     {
         flash.SetActive(false);
+    }
+
+    void MonsterDie()
+    {
+        Destroy(gameObject);
     }
 }

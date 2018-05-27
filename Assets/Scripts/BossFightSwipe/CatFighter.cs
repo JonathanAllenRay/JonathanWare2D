@@ -11,6 +11,7 @@ public class CatFighter : MonoBehaviour {
     public GameObject fireball;
     public GameObject ultFireball;
 
+
 	// Use this for initialization
 	void Start () {
 		

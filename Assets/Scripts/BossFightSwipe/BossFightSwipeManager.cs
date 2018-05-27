@@ -15,8 +15,14 @@ public class BossFightSwipeManager : MonoBehaviour {
     private int inputIndex = 0;
     private int throws = 0;
 
-	// Use this for initialization
-	void Start () {
+    public float timeScaleMod;
+
+    private bool success = false;
+
+    // Use this for initialization
+    void Start()
+    {
+        Time.timeScale += timeScaleMod;
         SetupFireball();	
 	}
 	
@@ -106,7 +112,7 @@ public class BossFightSwipeManager : MonoBehaviour {
 
     void CheckComboInput()
     {
-        if (SwipeManager.Instance.GetDir() != SwipeDirection.None)
+        if (SwipeManager.Instance.GetDir() != SwipeDirection.None && inputList.Count > 0)
         {
             if (SwipeManager.Instance.SwipingInDir(inputList[inputIndex].GetComponent<InputArrow>().GetArrowDir()))
             {
@@ -139,5 +145,19 @@ public class BossFightSwipeManager : MonoBehaviour {
                 }
             }
         }
+    }
+
+    IEnumerator Result()
+    {
+        if (success)
+        {
+            LevelSetVars.BeatBoss();
+        }
+        else
+        {
+            LevelSetVars.LostLife();
+        }
+        yield return new WaitForSeconds(1.0f);
+        //UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/LevelSets/Level1TapGames");
     }
 }

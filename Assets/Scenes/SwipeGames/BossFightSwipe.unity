@@ -212,6 +212,7 @@ MonoBehaviour:
   catFighter: {fileID: 1118422960}
   inputArrow: {fileID: 1437217874332010, guid: 2e9bdd94e2436fb4ba3309e107e15da0, type: 2}
   inputStartPoint: {fileID: 614195629}
+  timeScaleMod: 0
 --- !u!4 &1088110293
 Transform:
   m_ObjectHideFlags: 0
@@ -313,7 +314,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1106845834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.28, y: -2.72, z: 0}
+  m_LocalPosition: {x: 8.86, y: -2.72, z: 0}
   m_LocalScale: {x: 9.436905, y: 9.436903, z: 9.436903}
   m_Children:
   - {fileID: 1545146278}
