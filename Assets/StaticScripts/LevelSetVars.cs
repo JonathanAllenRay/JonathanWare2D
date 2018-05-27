@@ -8,8 +8,8 @@ public class LevelSetVars : MonoBehaviour {
     private static int currentGameIndex;
     private static int minGameIndex;
     private static int maxGameIndex;
+    private static int extraGamesPlayed;
     private static int gamesPlayed;
-    private static int gamesToPlay;
     private static int gamesWon;
     private static string setScenePath;
 
@@ -100,6 +100,19 @@ public class LevelSetVars : MonoBehaviour {
         }
     }
 
+
+    public static int ExtraGamesPlayed
+    {
+        get
+        {
+            return extraGamesPlayed;
+        }
+        set
+        {
+            extraGamesPlayed = value;
+        }
+    }
+
     public static int GamesPlayed
     {
         get
@@ -109,18 +122,6 @@ public class LevelSetVars : MonoBehaviour {
         set
         {
             gamesPlayed = value;
-        }
-    }
-
-    public static int GamesToPlay
-    {
-        get
-        {
-            return gamesToPlay;
-        }
-        set
-        {
-            gamesToPlay = value;
         }
     }
 
@@ -181,6 +182,11 @@ public class LevelSetVars : MonoBehaviour {
         GamesPlayed++;
     }
 
+    public static void PlayedExtraGame()
+    {
+        ExtraGamesPlayed++;
+    }
+
     public static void LostLife()
     {
         Lives--;
@@ -198,7 +204,7 @@ public class LevelSetVars : MonoBehaviour {
     }
 
 
-    public static void SetupSet(int minGameIndex, int maxGameIndex, int lives, int gamesToPlay, bool endless, string setScenePath)
+    public static void SetupSet(int minGameIndex, int maxGameIndex, int lives, bool endless, string setScenePath)
     {
         UnusedGameIndices = new List<int>();
         for (int i = minGameIndex; i < maxGameIndex; i++)
@@ -208,10 +214,10 @@ public class LevelSetVars : MonoBehaviour {
         ResetOnNextSetLoad = false;
         Lives = lives;
         GamesPlayed = 0;
-        GamesToPlay = gamesToPlay;
         GamesWon = 0;
         Endless = endless;
         BossFightWon = false;
         SetScenePath = setScenePath;
+        ExtraGamesPlayed = 0;
     }
 }
