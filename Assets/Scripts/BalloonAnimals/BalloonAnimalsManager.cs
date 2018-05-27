@@ -34,7 +34,15 @@ public class BalloonAnimalsManager : MonoBehaviour {
             textTimer.GetComponent<UnityEngine.UI.Text>().text = "Outta Time";
             if (!ended)
             {
-                StartCoroutine(Result());
+                Debug.Log("Getting result");
+                bool success = false;
+                if (catsSaved == numToSpawn)
+                {
+                    success = true;
+                    Debug.Log("Winner");
+                    meow.Play();
+                }
+                StartCoroutine(SetManager.Result(success, 1.0f, false));
             }
             ended = true;
         }
@@ -49,32 +57,6 @@ public class BalloonAnimalsManager : MonoBehaviour {
     public void SavedCat()
     {
         catsSaved++;
-    }
-
-    IEnumerator Result()
-    {
-        Debug.Log("Getting result");
-        bool success = false;
-        if (catsSaved == numToSpawn)
-        {
-            success = true;
-            Debug.Log("Winner");
-            meow.Play();
-        }
-        else
-        {
-            Debug.Log("Loser");
-        }
-        if (success)
-        {
-            LevelSetVars.WonGame();
-        }
-        else
-        {
-            LevelSetVars.LostLife();
-        }
-        yield return new WaitForSeconds(1.0f);
-        SceneManager.LoadScene(LevelSetVars.SetScenePath);
     }
 
 }

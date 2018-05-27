@@ -26,7 +26,7 @@ public class BoulderRunManager : MonoBehaviour {
             textTimer.GetComponent<UnityEngine.UI.Text>().text = "Outta Time";
             if (!ended)
             {
-                StartCoroutine(Result());
+                StartCoroutine(SetManager.Result(success, 1.0f, false));
             }
             ended = true;
         }
@@ -35,20 +35,6 @@ public class BoulderRunManager : MonoBehaviour {
             int roundedSeconds = (int)time;
             textTimer.GetComponent<UnityEngine.UI.Text>().text = "Time Left: " + roundedSeconds;
         }
-    }
-
-    IEnumerator Result()
-    {
-        if (success)
-        {
-            LevelSetVars.WonGame();
-        }
-        else
-        {
-            LevelSetVars.LostLife();
-        }
-        yield return new WaitForSeconds(1.0f);
-        SceneManager.LoadScene(LevelSetVars.SetScenePath);
     }
 
     public void MadeIt()

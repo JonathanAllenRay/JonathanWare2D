@@ -13,8 +13,6 @@ public class PlayerCar : MonoBehaviour {
     private Vector2 leftLane;
     private Vector2 dest;
 
-    private bool inRightLane = true;
-
     public float speed = 10.0f;
     private float changeBonus = 32.0f;
 

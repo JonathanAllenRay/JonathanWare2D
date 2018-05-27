@@ -36,7 +36,7 @@ public class SniperTapManager : MonoBehaviour {
             textTimer.GetComponent<UnityEngine.UI.Text>().text = "Outta Time";
             if (!ended)
             {
-                StartCoroutine(Result());
+                StartCoroutine(SetManager.Result(success, 1.0f, false));
             }
             ended = true;
         }
@@ -50,19 +50,5 @@ public class SniperTapManager : MonoBehaviour {
     public void TangoDown()
     {
         success = true;
-    }
-
-    IEnumerator Result()
-    {
-        if (success)
-        {
-            LevelSetVars.WonGame();
-        }
-        else
-        {
-            LevelSetVars.LostLife();
-        }
-        yield return new WaitForSeconds(1.0f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(LevelSetVars.SetScenePath);
     }
 }
