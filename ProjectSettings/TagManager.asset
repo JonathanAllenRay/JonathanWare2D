@@ -15,6 +15,7 @@ TagManager:
   - Barrier
   - SetManager
   - Platforms
+  - Pickups
   layers:
   - Default
   - TransparentFX

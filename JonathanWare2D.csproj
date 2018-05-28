@@ -317,6 +317,8 @@
     <Compile Include="Assets\Scripts\CarPassing\ObstacleCars.cs" />
     <Compile Include="Assets\Scripts\CarPassing\PlayerCar.cs" />
     <Compile Include="Assets\Scripts\CarPassing\RoadScroller.cs" />
+    <Compile Include="Assets\Scripts\CarsAndCoins\CarsAndCoinsManager.cs" />
+    <Compile Include="Assets\Scripts\CarsAndCoins\CoinsCar.cs" />
     <Compile Include="Assets\Scripts\CupToss\CupTossManager.cs" />
     <Compile Include="Assets\Scripts\CupToss\TossCup.cs" />
     <Compile Include="Assets\Scripts\EffectUtilities\CloudsDrift.cs" />
