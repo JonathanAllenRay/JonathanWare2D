@@ -12,7 +12,7 @@ public class LevelSetManager : MonoBehaviour {
     // Else M+1-End
 
     public int lives = 3;
-    public int gamesToPlay = 10;
+    private int gamesToPlay;
     public int minGameIndex = 0;
     public int maxGameIndex = 10;
     public int extraGamesToPlay = 0; // An extra game is a subset of all games
@@ -27,7 +27,7 @@ public class LevelSetManager : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        gamesToPlay += extraGamesToPlay;
+        gamesToPlay = (maxGameIndex - minGameIndex) + extraGamesToPlay;
         if (LevelSetVars.ResetOnNextSetLoad)
         {
             LevelSetVars.SetupSet(minGameIndex, maxGameIndex, lives, endless, setScenePath);

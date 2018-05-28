@@ -732,11 +732,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a7a92e4cff76d4d8e9c479dbc07b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftSpawn: {fileID: 988629918}
-  rightSpawn: {fileID: 817744835}
   time: 7
+  delay: 0
+  boss: 0
   textTimer: {fileID: 1195625702}
   timeScaleMod: 0
+  leftSpawn: {fileID: 988629918}
+  rightSpawn: {fileID: 817744835}
   leftAlien: {fileID: 1291115448721938, guid: f40a3531f5481174084ec6e3fa792e5e, type: 2}
   rightAlien: {fileID: 1291115448721938, guid: dcdf69a9683055546af0b0eb2ec4901b, type: 2}
 --- !u!1001 &1396984908

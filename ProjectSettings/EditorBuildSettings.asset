@@ -36,8 +36,38 @@ EditorBuildSettings:
     path: Assets/Scenes/TapGames/BoulderRun.unity
     guid: 97a5cfa0ab4b61849b8223872cc32493
   - enabled: 1
+    path: Assets/Scenes/SwipeGames/AlienStomp.unity
+    guid: ccf3c49d77836884eac36aa742d4cbd5
+  - enabled: 1
+    path: Assets/Scenes/SwipeGames/CarPassing.unity
+    guid: f0bb82a35ce26ad4b91a7335dd53e5a8
+  - enabled: 1
+    path: Assets/Scenes/SwipeGames/CupToss.unity
+    guid: e786d5c122b88f54aa13c30aff91ec3b
+  - enabled: 1
+    path: Assets/Scenes/SwipeGames/GalacticShuffleboard.unity
+    guid: 89eff780713d6e54b87e3ffc3e317622
+  - enabled: 1
+    path: Assets/Scenes/SwipeGames/HammerTime.unity
+    guid: 514a7aee6aa988d4a9531920e8493273
+  - enabled: 1
+    path: Assets/Scenes/SwipeGames/HeadMoomen.unity
+    guid: eb8ccc9acbd5a0943a0756801db5d152
+  - enabled: 1
+    path: Assets/Scenes/SwipeGames/NinjasVersusAliens.unity
+    guid: 35eb1b7624bf0f542b1113f7aa775c83
+  - enabled: 1
+    path: Assets/Scenes/SwipeGames/SpinToWin.unity
+    guid: 31616043aaa6db94d8c6b346dae7dec0
+  - enabled: 1
+    path: Assets/Scenes/SwipeGames/SplitIt.unity
+    guid: 29c34ba56adb49f46b1747da844adf7c
+  - enabled: 1
     path: Assets/Scenes/TapGames/BossFightTap.unity
     guid: 38e90d6d5ee63eb4f8e450895319a564
+  - enabled: 1
+    path: Assets/Scenes/SwipeGames/BossFightSwipe.unity
+    guid: 79c1a58a9eefd0a44b817e0444ad3376
   - enabled: 1
     path: Assets/Scenes/LevelSets/Level1TapGames.unity
     guid: e4e78c07afa5bf9409164f16c4b3f54a

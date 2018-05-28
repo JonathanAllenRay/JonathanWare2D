@@ -305,18 +305,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 561984762}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e589cab84df5daf4baed2d1718bc8c5f, type: 3}
+  m_Script: {fileID: 11500000, guid: f0ca1e737d5c70441bbb5ddc6d8c33cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   livesText: {fileID: 1068229474}
   gamesPlayedText: {fileID: 3001977}
   lives: 3
-  minGameIndex: 0
-  maxGameIndex: 10
-  extraGamesToPlay: 0
-  bossIndex: 19
-  extraChance: 0
-  setScenePath: Scenes/LevelSets/Level1TapGames
+  minGameIndex: 10
+  maxGameIndex: 19
+  extraGamesToPlay: 5
+  bossIndex: 20
+  extraChance: 0.33
+  setScenePath: Scenes/LevelSets/Level2SwipeGames
   endless: 0
 --- !u!1 &647447168
 GameObject:

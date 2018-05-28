@@ -31,4 +31,9 @@ public class MinigameManager : MonoBehaviour {
             textTimer.GetComponent<UnityEngine.UI.Text>().text = "Time Left: " + roundedSeconds;
         }
     }
+
+    protected void GameTimeUpdateNoTime(bool success)
+    { 
+        StartCoroutine(SetManager.Result(success, delay, boss));
+    }
 }

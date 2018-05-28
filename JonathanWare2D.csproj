@@ -289,6 +289,7 @@
     <Compile Include="Assets\Credits.cs" />
     <Compile Include="Assets\Scripts\_NonMinigames\Generic\MinigameManager.cs" />
     <Compile Include="Assets\Scripts\_NonMinigames\LevelSets\LevelSet1TapGames\Level1Manager.cs" />
+    <Compile Include="Assets\Scripts\_NonMinigames\LevelSets\LevelSet2SwipeGames\Level2Manager.cs" />
     <Compile Include="Assets\Scripts\_NonMinigames\LevelSets\LevelSetManager.cs" />
     <Compile Include="Assets\Scripts\_NonMinigames\UIMenu\UIButtons.cs" />
     <Compile Include="Assets\Scripts\AlienStomp\AlienStompManager.cs" />

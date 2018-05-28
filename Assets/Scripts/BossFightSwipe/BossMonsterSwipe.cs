@@ -13,13 +13,6 @@ public class BossMonsterSwipe : MonoBehaviour {
     private int health = 4;
 
     public GameObject deathEffect;
-    //public SwipeBossFightManager sbfm;
-
-
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -56,7 +49,7 @@ public class BossMonsterSwipe : MonoBehaviour {
     void MonsterDie()
     {
         Instantiate(explosion, transform.position, transform.rotation);
-        Destroy(gameObject);
         bfsm.BossDestroyed();
+        Destroy(gameObject);
     }
 }

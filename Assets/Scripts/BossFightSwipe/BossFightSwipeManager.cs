@@ -31,7 +31,7 @@ public class BossFightSwipeManager : MinigameManager {
 
     public void EndGame()
     {
-        StartCoroutine(Result());
+        GameTimeUpdateNoTime(success);
     }
 
     public void BossDestroyed()

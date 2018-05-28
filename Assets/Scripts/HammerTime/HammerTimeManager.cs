@@ -35,20 +35,6 @@ public class HammerTimeManager : MinigameManager {
         }
     }
 
-    IEnumerator Result()
-    {
-        if (success)
-        {
-            LevelSetVars.WonGame();
-        }
-        else
-        {
-            LevelSetVars.LostLife();
-        }
-        yield return new WaitForSeconds(1.0f);
-        //UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/LevelSets/Level1TapGames");
-    }
-
     public void EarthDestroyed()
     {
         success = false;

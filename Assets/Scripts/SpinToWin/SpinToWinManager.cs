@@ -18,6 +18,10 @@ public class SpinToWinManager : MinigameManager {
 
     // Update is called once per frame
     void Update() {
+        if (Mathf.Abs(spinnerBody.angularVelocity) > victoryVelocity)
+        {
+            success = true;
+        }
         GameTimeUpdate(success);
         if (SwipeManager.Instance.SwipingInDir(SwipeDirection.Left))
         {
