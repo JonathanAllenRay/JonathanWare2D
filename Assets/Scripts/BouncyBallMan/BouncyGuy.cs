@@ -20,7 +20,7 @@ public class BouncyGuy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.Translate(Vector2.right * Input.acceleration.x * Time.deltaTime * 10f);
+        transform.Translate(Vector2.right * Input.acceleration.x * Time.deltaTime * 16f);
         transform.eulerAngles = Vector2.zero;
     }
 
