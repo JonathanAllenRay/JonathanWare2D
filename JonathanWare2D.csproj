@@ -349,6 +349,9 @@
     <Compile Include="Assets\Scripts\SoccerJuggle\SoccerJuggleManager.cs" />
     <Compile Include="Assets\Scripts\SpinToWin\SpinToWinManager.cs" />
     <Compile Include="Assets\Scripts\SplitIt\SplitItManager.cs" />
+    <Compile Include="Assets\Scripts\Stunts\CameraFollower.cs" />
+    <Compile Include="Assets\Scripts\Stunts\StuntShark.cs" />
+    <Compile Include="Assets\Scripts\Stunts\StuntsManager.cs" />
     <Compile Include="Assets\Scripts\TapBossFight\BulletCleanup.cs" />
     <Compile Include="Assets\Scripts\TapBossFight\EnergyBall.cs" />
     <Compile Include="Assets\Scripts\TapBossFight\Monster.cs" />
