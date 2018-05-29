@@ -354,6 +354,7 @@
     <Compile Include="Assets\Scripts\TapBossFight\Monster.cs" />
     <Compile Include="Assets\Scripts\TapBossFight\ShootingMan.cs" />
     <Compile Include="Assets\Scripts\TapBossFight\TapBossFightManager.cs" />
+    <Compile Include="Assets\Scripts\Tuning\TuningManager.cs" />
     <Compile Include="Assets\Scripts\WesternDuel\EmptyTouchBoxShoot.cs" />
     <Compile Include="Assets\Scripts\WesternDuel\Explosion.cs" />
     <Compile Include="Assets\Scripts\WesternDuel\MuzzleFlash.cs" />
