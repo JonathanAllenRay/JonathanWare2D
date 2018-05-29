@@ -6,8 +6,15 @@ public class StuntsManager : MinigameManager {
 
 
     private bool success = false;
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+
+    // Use this for initialization
+    void Start()
+    {
+        Time.timeScale += timeScaleMod;
+    }
+
+    void Update () {
         GameTimeUpdate(success);
 	}
 

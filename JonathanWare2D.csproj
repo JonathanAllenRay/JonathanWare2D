@@ -347,6 +347,7 @@
     <Compile Include="Assets\Scripts\SniperTap\WalkingMan.cs" />
     <Compile Include="Assets\Scripts\SoccerJuggle\SoccerBall.cs" />
     <Compile Include="Assets\Scripts\SoccerJuggle\SoccerJuggleManager.cs" />
+    <Compile Include="Assets\Scripts\SodaShake\SodaShakeManager.cs" />
     <Compile Include="Assets\Scripts\SpinToWin\SpinToWinManager.cs" />
     <Compile Include="Assets\Scripts\SplitIt\SplitItManager.cs" />
     <Compile Include="Assets\Scripts\Stunts\CameraFollower.cs" />
