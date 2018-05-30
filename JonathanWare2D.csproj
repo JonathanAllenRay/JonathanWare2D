@@ -338,6 +338,8 @@
     <Compile Include="Assets\Scripts\InputManagers\SwipeManager.cs" />
     <Compile Include="Assets\Scripts\InvaderRunner\Alien.cs" />
     <Compile Include="Assets\Scripts\InvaderRunner\InvaderRunnerManager.cs" />
+    <Compile Include="Assets\Scripts\MazeDrag\MazeDragManager.cs" />
+    <Compile Include="Assets\Scripts\MazeDrag\MazeSnowman.cs" />
     <Compile Include="Assets\Scripts\NinjasVersusAliens\AlienUFO.cs" />
     <Compile Include="Assets\Scripts\NinjasVersusAliens\NinjasVersusAliensManager.cs" />
     <Compile Include="Assets\Scripts\NinjasVersusAliens\PlayerNinja.cs" />
