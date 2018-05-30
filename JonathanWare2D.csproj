@@ -350,6 +350,8 @@
     <Compile Include="Assets\Scripts\SodaShake\SodaShakeManager.cs" />
     <Compile Include="Assets\Scripts\SpinToWin\SpinToWinManager.cs" />
     <Compile Include="Assets\Scripts\SplitIt\SplitItManager.cs" />
+    <Compile Include="Assets\Scripts\StopAndGo\StopAndGoManager.cs" />
+    <Compile Include="Assets\Scripts\StopAndGo\StopAndGoRunner.cs" />
     <Compile Include="Assets\Scripts\Stunts\CameraFollower.cs" />
     <Compile Include="Assets\Scripts\Stunts\StuntShark.cs" />
     <Compile Include="Assets\Scripts\Stunts\StuntsManager.cs" />
