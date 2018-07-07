@@ -21,11 +21,13 @@ public class TheRocket : MonoBehaviour {
     {
         if (collision.transform.gameObject.name == "Umbrella")
         {
-
+            Instantiate(explosion, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
         else if (collision.transform.gameObject.name == "City")
         {
-
+            collision.transform.gameObject.GetComponent<BubbleCity>().Destroyed();
+            Destroy(gameObject);
         }
     }
 }
